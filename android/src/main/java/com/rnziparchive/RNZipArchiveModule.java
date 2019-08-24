@@ -343,7 +343,7 @@ public class RNZipArchiveModule extends ReactContextBaseJavaModule {
 
     try {
       String[] filePathArray = filePaths.toArray(new String[filePaths.size()]);
-      new ZipTask(filePathArray, destDirectory, fromDirectory, promise, this).zip();
+      new ZipTask(filePathArray, destDirectory, fromDirectory, promise, this, getReactApplicationContext()).zip();
     } catch (Exception ex) {
       promise.reject(null, ex.getMessage());
       return;
